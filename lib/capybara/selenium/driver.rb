@@ -49,6 +49,7 @@ class Capybara::Selenium::Driver < Capybara::Driver::Base
   end
 
   def find(selector)
+    sleep 0.5
     browser.find_elements(:xpath, selector).map { |node| Capybara::Selenium::Node.new(self, node) }
   end
 
